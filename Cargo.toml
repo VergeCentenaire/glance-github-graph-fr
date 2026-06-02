@@ -1,5 +1,5 @@
 [package]
-name = "glance-github-graph"
+name = "glance-github-graph-fr"
 version = "0.1.0"
 edition = "2024"
 
@@ -24,5 +24,5 @@ strip = true
 lto = true
 
 [[bin]]
-name = "glance-github-graph"
+name = "glance-github-graph-fr"
 path = "src/main.rs"

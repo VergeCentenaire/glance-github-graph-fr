@@ -15,8 +15,8 @@ ENV CARGO_TARGET_AARCH64_UNKNOWN_LINUX_MUSL_LINKER=aarch64-linux-gnu-gcc
 
 RUN TARGET=$(eval echo \$RUST_TARGET_${TARGETARCH}) && \
     cargo build --release --locked --target $TARGET && \
-    cp target/$TARGET/release/glance-github-graph glance-github-graph
-RUN upx --best --lzma glance-github-graph
+    cp target/$TARGET/release/glance-github-graph-fr glance-github-graph-fr
+RUN upx --best --lzma glance-github-graph-fr
 
 FROM scratch
 WORKDIR /app
@@ -24,7 +24,7 @@ COPY --from=builder /app/templates ./templates
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
 EXPOSE 8080
-COPY --from=builder /app/glance-github-graph ./glance-github-graph
+COPY --from=builder /app/glance-github-graph-fr ./glance-github-graph-fr
 
 ENV RUST_LOG=info,html5ever::tree_builder=error
-CMD ["./glance-github-graph"] 
+CMD ["./glance-github-graph-fr"] 
