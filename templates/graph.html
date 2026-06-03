@@ -2,3 +2,13 @@
      style="overflow-x:auto;scrollbar-width: thin;padding-bottom:1rem;">
     {{ svg|safe }}
 </div>
+
+<script>
+window.addEventListener("load", () => {
+    const graph = document.getElementById("graph-slider");
+
+    if (graph) {
+        graph.scrollLeft = graph.scrollWidth - graph.clientWidth;
+    }
+});
+</script>
