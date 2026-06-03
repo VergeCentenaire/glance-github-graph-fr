@@ -6,8 +6,10 @@
 <script>
 setTimeout(() => {
     const graph = document.getElementById("graph-slider");
+
     if (graph) {
         graph.scrollLeft = graph.scrollWidth;
+        console.log("scroll applied");
     }
-}, 100);
+}, 3000);
 </script>
