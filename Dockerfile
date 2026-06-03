@@ -14,7 +14,7 @@ COPY . .
 ENV CARGO_TARGET_AARCH64_UNKNOWN_LINUX_MUSL_LINKER=aarch64-linux-gnu-gcc
 
 RUN TARGET=$(eval echo \$RUST_TARGET_${TARGETARCH}) && \
-    cargo build --release --locked --target $TARGET && \
+    cargo build --release --target $TARGET && \
     cp target/$TARGET/release/glance-github-graph-fr glance-github-graph-fr
 RUN upx --best --lzma glance-github-graph-fr
 
