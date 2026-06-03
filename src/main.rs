@@ -1,4 +1,4 @@
-use glance_github_graph::api::run_api_server;
+use glance_github_graph_fr::api::run_api_server;
 
 #[tokio::main]
 async fn main() -> std::io::Result<()> {
