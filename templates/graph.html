@@ -4,11 +4,12 @@
 </div>
 
 <script>
-window.addEventListener("load", () => {
+setTimeout(() => {
     const graph = document.getElementById("graph-slider");
 
     if (graph) {
         graph.scrollLeft = graph.scrollWidth - graph.clientWidth;
+        console.log("auto-scroll applied");
     }
-});
+}, 2000);
 </script>
